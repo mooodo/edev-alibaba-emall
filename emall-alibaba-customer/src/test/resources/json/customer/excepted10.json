@@ -1,0 +1,42 @@
+{
+  "id": 1,
+  "name": "Johnwood",
+  "gender": "male",
+  "email": "johnwood@126.com",
+  "identification": "110114197809207812",
+  "birthdate": "1978-09-20 00:00:00",
+  "phoneNumber": "13677882314",
+  "addresses": [
+    {
+      "id": 10,
+      "customerId": 1,
+      "countryId": 1000,
+      "provinceId": 500000,
+      "cityId": null,
+      "districtId": 500106,
+      "detailAddress": "The ChongQing University",
+      "phoneNumber": "023-62325544",
+      "isDefault": false,
+      "country": {
+        "id": 1000,
+        "name": "中国",
+        "countryCode": "86",
+        "currencyType": "RMB"
+      },
+      "province": {
+        "id": 500000,
+        "name": "重庆市",
+        "countryId": 1000,
+        "provinceCode": "50"
+      },
+      "city": null,
+      "district": {
+        "id": 500106,
+        "name": "沙坪坝区",
+        "provinceId": 500000,
+        "cityId": 500100,
+        "districtCode": "500106"
+      }
+    }
+  ]
+}

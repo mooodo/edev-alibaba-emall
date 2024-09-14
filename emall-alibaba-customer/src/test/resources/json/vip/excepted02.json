@@ -1,0 +1,17 @@
+{
+  "id": 10001,
+  "vipLevel": "golden",
+  "points": 5500,
+  "accumulatedPoints": 20500,
+  "customer": {
+    "id": 10001,
+    "name": "李秋水",
+    "gender": "female",
+    "email": null,
+    "identification": "510110197910012312",
+    "birthdate": "1979-10-01 00:00:00",
+    "phoneNumber": "13388990123"
+  },
+  "image": "/img/man.jpg",
+  "creditLimit": 50000.0
+}

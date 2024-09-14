@@ -1,0 +1,124 @@
+{
+  "id": 1,
+  "customerId": 10001,
+  "addressId": 1000100,
+  "status": "payoff",
+  "amount": 24600.0,
+  "customer": {
+    "id": 10001,
+    "name": "李秋水",
+    "gender": "female",
+    "email": null,
+    "identification": "510110197910012312",
+    "birthdate": "1979-10-01 00:00:00",
+    "phoneNumber": "13388990123"
+  },
+  "address": {
+    "id": 1000100,
+    "customerId": 10001,
+    "countryId": 1000,
+    "provinceId": 420000,
+    "cityId": 420100,
+    "districtId": 420111,
+    "detailAddress": "珞瑜路726号",
+    "phoneNumber": "13300224466",
+    "isDefault": false,
+    "country": {
+      "id": 1000,
+      "name": "中国",
+      "countryCode": "86",
+      "currencyType": "RMB"
+    },
+    "province": {
+      "id": 420000,
+      "name": "湖北省",
+      "countryId": 1000,
+      "provinceCode": "42"
+    },
+    "city": {
+      "id": 420100,
+      "name": "武汉市",
+      "provinceId": 420000,
+      "cityCode": "4201"
+    },
+    "district": {
+      "id": 420111,
+      "name": "洪山区",
+      "provinceId": 420000,
+      "cityId": 420100,
+      "districtCode": "420111"
+    }
+  },
+  "orderItems": [
+    {
+      "id": 10,
+      "orderId": 1,
+      "productId": 30001,
+      "quantity": 3,
+      "price": 4000.0,
+      "amount": 12000.0,
+      "product": {
+        "id": 30001,
+        "name": "Apple iPhone X 256GB 深空灰色 移动联通电信4G手机",
+        "description": null,
+        "price": 4000.0,
+        "supplierId": 20004,
+        "categoryId": 100100,
+        "brandId": null,
+        "image": "/static/img/product1.jpg",
+        "tip": "自营",
+        "status": "on sale",
+        "supplier": {
+          "id": 20004,
+          "name": "苹果公司(Apple Inc.)",
+          "phoneNumber": "010-65128989",
+          "email": "business@apple.com",
+          "address": null
+        },
+        "productCategory": {
+          "id": 100100,
+          "name": "智能手机",
+          "description": null,
+          "parentId": 100000,
+          "layer": 2
+        },
+        "brand": null
+      }
+    },
+    {
+      "id": 11,
+      "orderId": 1,
+      "productId": 30002,
+      "quantity": 1,
+      "price": 12600.0,
+      "amount": 12600.0,
+      "product": {
+        "id": 30002,
+        "name": "Apple iPad 平板电脑 2018年新款9.7英寸",
+        "description": null,
+        "price": 12600.0,
+        "supplierId": 20004,
+        "categoryId": 100200,
+        "brandId": null,
+        "image": "/static/img/product2.jpg",
+        "tip": "优惠",
+        "status": "on sale",
+        "supplier": {
+          "id": 20004,
+          "name": "苹果公司(Apple Inc.)",
+          "phoneNumber": "010-65128989",
+          "email": "business@apple.com",
+          "address": null
+        },
+        "productCategory": {
+          "id": 100200,
+          "name": "平板电脑",
+          "description": null,
+          "parentId": 100000,
+          "layer": 2
+        },
+        "brand": null
+      }
+    }
+  ]
+}

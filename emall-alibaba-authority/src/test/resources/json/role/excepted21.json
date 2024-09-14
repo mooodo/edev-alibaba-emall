@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "name": "test role",
+  "description": "a role to test system",
+  "authorities": [],
+  "users": [
+    {
+      "id": 998,
+      "username": "test1",
+      "password": "{noop}1111",
+      "accountExpired": false,
+      "accountLocked": false,
+      "credentialsExpired": false,
+      "disabled": false,
+      "userType": "guest"
+    }
+  ]
+}

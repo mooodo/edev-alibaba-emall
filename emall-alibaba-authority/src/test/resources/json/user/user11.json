@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "username": "Mooodo",
+  "password": "{noop}4321",
+  "accountExpired": false,
+  "accountLocked": false,
+  "credentialsExpired": false,
+  "disabled": false,
+  "userType": "administrator",
+  "roles": [
+    {"id": 999},{"id": 998}
+  ]
+}

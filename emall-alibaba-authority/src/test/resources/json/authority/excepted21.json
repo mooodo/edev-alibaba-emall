@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "name": "Test Authority",
+  "description": "an authority for test",
+  "users": [],
+  "roles": [
+    {
+      "id": 998,
+      "name": "test1",
+      "description": "A role for test"
+    }
+  ]
+}

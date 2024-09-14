@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dobjs>
+    <do class="com.edev.emall.vip.entity.Vip" tableName="t_vip" subclassType="simple">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="createTime" column="create_time"/>
+        <property name="modifyTime" column="modify_time"/>
+        <property name="points" column="points"/>
+        <property name="accumulatedPoints" column="accumulated_points"/>
+        <join name="customer" joinType="oneToOne"
+              class="com.edev.emall.customer.entity.Customer"/>
+        <property name="vipLevel" column="vip_level" isDiscriminator="true"/>
+        <subclass class="com.edev.emall.vip.entity.GoldenVip" value="golden">
+            <property name="image" column="image"/>
+            <property name="creditLimit" column="credit_limit"/>
+        </subclass>
+        <subclass class="com.edev.emall.vip.entity.SilverVip" value="silver"/>
+    </do>
+    <do class="com.edev.emall.vip.entity.PointsRule" tableName="t_points_rule">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="pointsPerYuan" column="points_per_yuan"/>
+        <property name="pointsCap" column="points_cap"/>
+    </do>
+    <do class="com.edev.emall.vip.entity.UpgradeRule" tableName="t_upgrade_rule">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="vipLevel" column="vip_level"/>
+        <property name="pointsNeed" column="points_need"/>
+    </do>
+</dobjs>

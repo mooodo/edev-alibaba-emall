@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "name": "test role",
+  "description": "a role to test system",
+  "users": [
+    { "id": 998, "userType": "guest" }
+  ]
+}

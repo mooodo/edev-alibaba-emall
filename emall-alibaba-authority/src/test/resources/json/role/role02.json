@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "name": "test role",
+  "description": "a role to test system",
+  "users": [
+    { "id": 999, "userType": "guest" }
+  ],
+  "authorities": [
+    { "id": 999 }
+  ]
+}

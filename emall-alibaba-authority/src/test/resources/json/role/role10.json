@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "name": "test role",
+  "description": "a role to test system",
+  "authorities": [
+    { "id": 999 },{ "id": 998 }
+  ]
+}

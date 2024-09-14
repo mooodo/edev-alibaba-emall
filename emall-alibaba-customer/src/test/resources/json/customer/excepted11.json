@@ -1,0 +1,83 @@
+{
+  "id": 1,
+  "name": "Mary",
+  "gender": "female",
+  "email": "johnwood@126.com",
+  "identification": "110114197809207812",
+  "birthdate": "1978-09-20 00:00:00",
+  "phoneNumber": "13677882314",
+  "addresses": [
+    {
+      "id": 10,
+      "customerId": 1,
+      "countryId": 1000,
+      "provinceId": 370000,
+      "cityId": 370100,
+      "districtId": 370102,
+      "detailAddress": "Happy street No.12",
+      "phoneNumber": "0531-88896666",
+      "isDefault": true,
+      "country": {
+        "id": 1000,
+        "name": "中国",
+        "countryCode": "86",
+        "currencyType": "RMB"
+      },
+      "province": {
+        "id": 370000,
+        "name": "山东省",
+        "countryId": 1000,
+        "provinceCode": "37"
+      },
+      "city": {
+        "id": 370100,
+        "name": "济南市",
+        "provinceId": 370000,
+        "cityCode": "3701"
+      },
+      "district": {
+        "id": 370102,
+        "name": "历下区",
+        "provinceId": 370000,
+        "cityId": 370100,
+        "districtCode": "370102"
+      }
+    },
+    {
+      "id": 12,
+      "customerId": 1,
+      "countryId": 1000,
+      "provinceId": 370000,
+      "cityId": 370100,
+      "districtId": 370102,
+      "detailAddress": "The park of Gushan",
+      "phoneNumber": "0531-64128989",
+      "isDefault": true,
+      "country": {
+        "id": 1000,
+        "name": "中国",
+        "countryCode": "86",
+        "currencyType": "RMB"
+      },
+      "province": {
+        "id": 370000,
+        "name": "山东省",
+        "countryId": 1000,
+        "provinceCode": "37"
+      },
+      "city": {
+        "id": 370100,
+        "name": "济南市",
+        "provinceId": 370000,
+        "cityCode": "3701"
+      },
+      "district": {
+        "id": 370102,
+        "name": "历下区",
+        "provinceId": 370000,
+        "cityId": 370100,
+        "districtCode": "370102"
+      }
+    }
+  ]
+}

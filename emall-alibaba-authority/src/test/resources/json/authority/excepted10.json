@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "name": "Test Authority",
+  "description": "an authority for test",
+  "users": [
+    {
+      "id": 999,
+      "username": "test",
+      "password": "{noop}1111",
+      "accountExpired": false,
+      "accountLocked": false,
+      "credentialsExpired": false,
+      "disabled": false,
+      "userType": "guest"
+    }
+  ],
+  "roles": []
+}

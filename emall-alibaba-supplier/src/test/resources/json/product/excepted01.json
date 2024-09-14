@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "name": "Laptop",
+  "description": "A Laptop",
+  "price": 8000.0,
+  "supplierId": 20003,
+  "categoryId": 100300,
+  "brandId": null,
+  "image": "/img/Nodebook.png",
+  "tip": "自营",
+  "status": "on sale",
+  "supplier": {
+    "id": 20003,
+    "name": "华为技术有限公司",
+    "phoneNumber": "010-61003419",
+    "email": "business@huawei.com",
+    "address": "广东省深圳市龙岗区坂田华为基地"
+  },
+  "productCategory": {
+    "id": 100300,
+    "name": "笔记本电脑",
+    "description": null,
+    "parentId": 100000,
+    "layer": 2
+  }
+}

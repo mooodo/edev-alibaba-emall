@@ -1,0 +1,106 @@
+{
+  "id": 3,
+  "customerId": 10001,
+  "addressId": 1000100,
+  "status": "create",
+  "amount": 16836.64,
+  "customer": {
+    "id": 10001,
+    "name": "李秋水",
+    "gender": "female",
+    "email": null,
+    "identification": "510110197910012312",
+    "birthdate": "1979-10-01 00:00:00",
+    "phoneNumber": "13388990123"
+  },
+  "address": {
+    "id": 1000100,
+    "customerId": 10001,
+    "countryId": 1000,
+    "provinceId": 420000,
+    "cityId": 420100,
+    "districtId": 420111,
+    "detailAddress": "珞瑜路726号",
+    "phoneNumber": "13300224466",
+    "isDefault": false,
+    "country": {
+      "id": 1000,
+      "name": "中国",
+      "countryCode": "86",
+      "currencyType": "RMB"
+    },
+    "province": {
+      "id": 420000,
+      "name": "湖北省",
+      "countryId": 1000,
+      "provinceCode": "42"
+    },
+    "city": {
+      "id": 420100,
+      "name": "武汉市",
+      "provinceId": 420000,
+      "cityCode": "4201"
+    },
+    "district": {
+      "id": 420111,
+      "name": "洪山区",
+      "provinceId": 420000,
+      "cityId": 420100,
+      "districtCode": "420111"
+    }
+  },
+  "orderItems": [
+    {
+      "id": 31,
+      "orderId": 3,
+      "productId": 30005,
+      "quantity": 1,
+      "price": 8288.0,
+      "amount": 6630.4,
+      "product": {
+        "id": 30005,
+        "name": "微软（Microsoft）新Surface Pro 二合一平板电脑笔记本 12.3英寸（i5 8G内存 256G存储）",
+        "description": null,
+        "price": 8288.0,
+        "supplierId": 20005,
+        "categoryId": 100300,
+        "image": "/static/img/product5.jpg",
+        "tip": null,
+        "status": "on sale",
+        "supplier": {
+          "id": 20005,
+          "name": "微软公司(Microsoft)",
+          "phoneNumber": "010-65543423",
+          "email": "business@microsoft.com",
+          "address": "北京市海淀区丹棱街5号"
+        }
+      }
+    },
+    {
+      "id": 32,
+      "orderId": 3,
+      "productId": 30007,
+      "quantity": 2,
+      "price": 5799.0,
+      "amount": 10206.24,
+      "product": {
+        "id": 30007,
+        "name": "华为 HUAWEI Mate 30E Pro 5G麒麟990E SoC芯片 双4000万徕卡电影影像 8GB+256GB青山黛全网通手机",
+        "description": null,
+        "price": 5799.0,
+        "supplierId": 20003,
+        "categoryId": 100100,
+        "image": "/static/img/HUAWEI_Mate_30E Pro.jpg",
+        "tip": "秒杀",
+        "status": "on sale",
+        "supplier": {
+          "id": 20003,
+          "name": "华为技术有限公司",
+          "phoneNumber": "010-61003419",
+          "email": "business@huawei.com",
+          "address": "广东省深圳市龙岗区坂田华为基地"
+        }
+      }
+    }
+  ]
+}

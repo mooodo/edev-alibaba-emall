@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Tom",
+  "gender": "male",
+  "identification": "110104200410128760",
+  "email": "tom@qq.com",
+  "phoneNumber": "13612127878",
+  "supplierId": 20003
+}

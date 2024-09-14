@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "name": "Tom",
+  "gender": "male",
+  "identification": "110104200410128760",
+  "birthdate": "2004-10-12 00:00:00",
+  "email": "tom@qq.com",
+  "phoneNumber": "13677779988",
+  "supplierId": 20001,
+  "supplier": {
+    "id": 20001,
+    "name": "国际商用机器公司(IBM)",
+    "phoneNumber": "010-65129123",
+    "email": "business@ibm.com",
+    "address": "北京市朝阳区奥运村街道北四环中路27号"
+  }
+}

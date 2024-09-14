@@ -1,0 +1,30 @@
+{
+  "id": 1,
+  "name": "Mary",
+  "gender": "female",
+  "identification": "110114197809207812",
+  "email": "johnwood@126.com",
+  "phoneNumber": "13677882314",
+  "addresses": [
+    {
+      "id": 10,
+      "countryId": 1000,
+      "provinceId": 370000,
+      "cityId": 370100,
+      "districtId": 370102,
+      "detailAddress": "Happy street No.12",
+      "phoneNumber": "0531-88896666",
+      "isDefault": true
+    },
+    {
+      "id": 12,
+      "countryId": 1000,
+      "provinceId": 370000,
+      "cityId": 370100,
+      "districtId": 370102,
+      "detailAddress": "The park of Gushan",
+      "phoneNumber": "0531-64128989",
+      "isDefault": true
+    }
+  ]
+}

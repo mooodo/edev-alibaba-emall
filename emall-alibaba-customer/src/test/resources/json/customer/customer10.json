@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "name": "Johnwood",
+  "gender": "male",
+  "identification": "110114197809207812",
+  "email": "johnwood@126.com",
+  "phoneNumber": "13677882314",
+  "addresses": [
+    {
+      "id": 10,
+      "countryId": 1000,
+      "provinceId": 500000,
+      "cityId": null,
+      "districtId": 500106,
+      "detailAddress": "The ChongQing University",
+      "phoneNumber": "023-62325544"
+    }
+  ]
+}

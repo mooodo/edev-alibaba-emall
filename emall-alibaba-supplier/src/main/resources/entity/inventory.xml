@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dobjs>
+    <do class="com.edev.emall.inventory.entity.Inventory" tableName="t_inventory">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="quantity" column="quantity"/>
+        <property name="updateTime" column="update_time"/>
+    </do>
+    <do class="com.edev.emall.inventory.entity.InventoryRecord" tableName="t_inventory_record">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="productId" column="product_id"/>
+        <property name="quantity" column="quantity_change"/>
+        <property name="updateTime" column="update_time"/>
+        <property name="operation" column="operation"/>
+    </do>
+</dobjs>

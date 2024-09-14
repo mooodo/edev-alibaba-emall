@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "name": "Nodebook",
+  "description": "A Nodebook",
+  "price": 8000,
+  "image": "/img/Nodebook.png",
+  "tip": "自营",
+  "status": "on sale",
+  "supplierId": 20003,
+  "categoryId": 100300
+}

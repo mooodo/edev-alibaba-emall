@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "name": "Tom",
+  "gender": "male",
+  "identification": "110104200410128760",
+  "birthdate": "2004-10-12 00:00:00",
+  "email": "tom@qq.com",
+  "phoneNumber": "13612127878",
+  "supplierId": 20003,
+  "supplier": {
+    "id": 20003,
+    "name": "华为技术有限公司",
+    "phoneNumber": "010-61003419",
+    "email": "business@huawei.com",
+    "address": "广东省深圳市龙岗区坂田华为基地"
+  }
+}

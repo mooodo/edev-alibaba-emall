@@ -1,0 +1,7 @@
+{
+  "id": 1,
+  "name": "test role",
+  "description": "a role to test system",
+  "authorities": [],
+  "users": []
+}

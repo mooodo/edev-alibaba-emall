@@ -1,0 +1,95 @@
+spring:
+  application:
+    name: emall-order
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis:
+  mapperLocations: classpath*:mapper/*Mapper.xml
+security:
+  passwordEncoder: noop
+  loginUrl: http://localhost:8080
+logging:
+  level:
+    com.edev.support: INFO
+    com.edev.support.dao: DEBUG
+    com.edev.support.cache: DEBUG
+    com.edev.emall.query.dao: DEBUG
+---
+spring:
+  profiles: dev
+  rabbitmq:
+    host: kubernetes
+    port: 31672
+    username: guest
+    password: guest
+  #kafka:
+  #  binder:
+  #    zk-nodes: kubernetes:32181
+  #  bootstrap-servers: kubernetes:30092
+  cloud:
+    stream:
+      bindings:
+        payoff:
+          destination: payoff
+          group: ${spring.application.name}
+        returnGoods:
+          destination: returnGoods
+          group: ${spring.application.name}
+        payWithAccount:
+          destination: payWithAccount
+          group: ${spring.application.name}
+        refund:
+          destination: refund
+          group: ${spring.application.name}
+    #rocketmq:
+    #  binder:
+    #    name-server: kubernetes:30876
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: localhost:8858
+      eager: true
+  datasource:
+    url: jdbc:mysql://master:4000/emallOrder?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: emall
+    password: emall1234
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    database: 0
+    host: kubernetes
+    port: 31379
+    password:
+    pool:
+      maxActive: 200
+      maxWait: -1
+      maxIdel: 10
+      minIdel: 0
+    timeout: 1000
+server:
+  port: 9004
+---
+spring:
+  profiles: docker
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_ADDR}
+        username: ${NACOS_USR:nacos}
+        password: ${NACOS_PWD:nacos}
+      config:
+        server-addr: ${NACOS_ADDR}
+        file-extension: yaml
+server:
+  port: ${SERVICE_PORT:9004}
