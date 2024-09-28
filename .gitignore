@@ -33,7 +33,3 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/.idea/misc.xml
-/.idea/vcs.xml
-/.idea/workspace.xml
-/.idea/codeStyles/
