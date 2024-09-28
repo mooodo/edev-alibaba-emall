@@ -1,0 +1,12 @@
+{
+  "id": 10010,
+  "balance": 20000.0,
+  "customer": {
+    "id": 10010,
+    "name": "刘玄德",
+    "gender": "male",
+    "identification": "410110199910107779",
+    "birthdate": "1999-10-10 00:00:00",
+    "phoneNumber": "15466779900"
+  }
+}
