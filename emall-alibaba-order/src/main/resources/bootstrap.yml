@@ -80,6 +80,17 @@ spring:
     timeout: 1000
 server:
   port: 9004
+feign:
+  sentinel:
+    enabled: true
+ribbon:
+  connectTimeout: 1000
+  readTimeout: 2000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 ---
 spring:
   profiles: docker

@@ -8,6 +8,7 @@ import com.edev.support.event.DomainEventReceiver;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,6 +20,7 @@ public class PayoffEventReceiver implements DomainEventReceiver {
     @Autowired
     private VipService vipService;
     @Override
+    @StreamListener("payoff")
     public void apply(DomainEventObject event) {
         Order order = event.convertToEntity(Order.class);
         log.debug("accumulate points if is vip");
