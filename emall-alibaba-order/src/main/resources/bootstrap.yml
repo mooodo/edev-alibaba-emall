@@ -19,6 +19,7 @@ logging:
     com.edev.support.dao: DEBUG
     com.edev.support.cache: DEBUG
     com.edev.emall.query.dao: DEBUG
+    com.alibaba.nacos: ERROR
 ---
 spring:
   profiles: dev

@@ -38,8 +38,6 @@ public class OrderServiceImpl implements OrderService {
         order.calculateAmountForEachItem();
         discount(order);
         order.sumOfAmount();
-        order.readyForPay();
-        order.setStatus("create");
         order.setOrderTime(DateUtils.getNow());
         return dao.insert(order);
     }
@@ -50,8 +48,6 @@ public class OrderServiceImpl implements OrderService {
         order.calculateAmountForEachItem();
         discount(order);
         order.sumOfAmount();
-        if(order.getPayment()==null) order.readyForPay();
-        else order.getPayment().setAmount(order.getAmount());
         order.setModifyTime(DateUtils.getNow());
         dao.update(order);
     }

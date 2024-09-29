@@ -14,7 +14,7 @@
         <ref name="address" refKey="addressId" refType="manyToOne"
              bean="com.edev.emall.order.service.feign.CustomerService"
              method="loadAddress" listMethod="loadAddressForList"/>
-        <join name="payment" joinType="oneToOne" isAggregation="true"
+        <join name="payment" joinType="oneToOne"
               class="com.edev.emall.order.entity.Payment"/>
         <join name="orderItems" joinKey="orderId" joinType="oneToMany" isAggregation="true"
               class="com.edev.emall.order.entity.OrderItem"/>

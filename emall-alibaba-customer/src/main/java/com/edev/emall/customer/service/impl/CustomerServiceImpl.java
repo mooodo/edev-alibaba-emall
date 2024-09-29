@@ -3,12 +3,12 @@ package com.edev.emall.customer.service.impl;
 import com.edev.emall.customer.entity.Address;
 import com.edev.emall.customer.entity.Customer;
 import com.edev.emall.customer.service.CustomerService;
-import com.edev.emall.utils.ValidUtils;
 import com.edev.support.dao.BasicDao;
 import com.edev.support.utils.DateUtils;
 
 import java.util.Collection;
-import java.util.List;
+
+import static com.edev.emall.utils.ValidUtils.isNull;
 
 public class CustomerServiceImpl implements CustomerService {
     private final BasicDao dao;
@@ -16,9 +16,9 @@ public class CustomerServiceImpl implements CustomerService {
         this.dao = dao;
     }
     private void valid(Customer customer) {
-        ValidUtils.isNull(customer, "customer");
-        ValidUtils.isNull(customer.getId(), "id");
-        ValidUtils.isNull(customer.getName(), "name");
+        isNull(customer, "customer");
+        isNull(customer.getId(), "id");
+        isNull(customer.getName(), "name");
     }
     @Override
     public Long register(Customer customer) {
@@ -66,7 +66,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Collection<Customer> loadForList(List<Long> customerIds) {
+    public Collection<Customer> loadForList(Collection<Long> customerIds) {
         return dao.loadForList(customerIds, Customer.class);
     }
 
@@ -81,7 +81,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Collection<Address> loadAddressForList(List<Long> addressIds) {
+    public Collection<Address> loadAddressForList(Collection<Long> addressIds) {
         return dao.loadForList(addressIds, Address.class);
     }
 }

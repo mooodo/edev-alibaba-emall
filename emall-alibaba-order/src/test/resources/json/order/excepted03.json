@@ -8,7 +8,6 @@
     "id": 10001,
     "name": "李秋水",
     "gender": "female",
-    "email": null,
     "identification": "510110197910012312",
     "birthdate": "1979-10-01 00:00:00",
     "phoneNumber": "13388990123"
@@ -52,7 +51,7 @@
   "payment": {
     "id": 1,
     "amount": 8000.0,
-    "method": "alipay",
+    "method": "account",
     "status": "payoff"
   },
   "orderItems": [
@@ -66,11 +65,10 @@
       "product": {
         "id": 30001,
         "name": "Apple iPhone X 256GB 深空灰色 移动联通电信4G手机",
-        "description": null,
         "price": 4000.0,
         "supplierId": 20004,
         "categoryId": 100100,
-        "brandId": null,
+        "brandId": 1000,
         "image": "/static/img/product1.jpg",
         "tip": "自营",
         "status": "on sale",
@@ -83,9 +81,12 @@
         "productCategory": {
           "id": 100100,
           "name": "智能手机",
-          "description": null,
           "parentId": 100000,
           "layer": 2
+        },
+        "brand": {
+          "id": 1000,
+          "name": "Apple"
         }
       }
     }

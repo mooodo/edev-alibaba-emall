@@ -2,11 +2,12 @@ package com.edev.emall.authority.service.impl;
 
 import com.edev.emall.authority.entity.User;
 import com.edev.emall.authority.service.UserService;
-import com.edev.emall.utils.ValidUtils;
 import com.edev.support.dao.BasicDao;
-import com.edev.support.exception.ValidException;
 
 import java.util.Collection;
+
+import static com.edev.emall.utils.ValidUtils.isError;
+import static com.edev.emall.utils.ValidUtils.isNull;
 
 public class UserServiceImpl implements UserService {
     private final BasicDao dao;
@@ -14,16 +15,15 @@ public class UserServiceImpl implements UserService {
         this.dao = dao;
     }
     private void valid(User user) {
-        ValidUtils.isNull(user, "user");
-        ValidUtils.isNull(user.getId(), "id");
-        ValidUtils.isNull(user.getUsername(), "username");
+        isNull(user, "user");
+        isNull(user.getId(), "id");
+        isNull(user.getUsername(), "username");
         if(user.getUserType()==null) user.setUserType("guest");
     }
     @Override
     public Long register(User user) {
         valid(user);
-        if(userExists(user.getUsername()))
-            throw new ValidException("The username exists[%s]", user.getUsername());
+        isError(userExists(user.getUsername()), "The username exists[%s]", user.getUsername());
         return dao.insert(user);
     }
 
@@ -31,8 +31,8 @@ public class UserServiceImpl implements UserService {
     public void modify(User user) {
         valid(user);
         User oldUser = load(user.getId());
-        if(!user.getUsername().equals(oldUser.getUsername()))
-            throw new ValidException("The username cannot modify[%s]", user.getUsername());
+        isError(!user.getUsername().equals(oldUser.getUsername()),
+                "The username cannot modify[%s]", user.getUsername());
         dao.update(user);
     }
 

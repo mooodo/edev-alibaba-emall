@@ -2,8 +2,9 @@ package com.edev.emall.authority.service.impl;
 
 import com.edev.emall.authority.entity.Role;
 import com.edev.emall.authority.service.RoleService;
-import com.edev.emall.utils.ValidUtils;
 import com.edev.support.dao.BasicDao;
+
+import static com.edev.emall.utils.ValidUtils.isNull;
 
 public class RoleServiceImpl implements RoleService {
     private final BasicDao dao;
@@ -11,9 +12,9 @@ public class RoleServiceImpl implements RoleService {
         this.dao = dao;
     }
     private void valid(Role role) {
-        ValidUtils.isNull(role, "role");
-        ValidUtils.isNull(role.getId(), "id");
-        ValidUtils.isNull(role.getName(), "name");
+        isNull(role, "role");
+        isNull(role.getId(), "id");
+        isNull(role.getName(), "name");
     }
     @Override
     public Long create(Role role) {

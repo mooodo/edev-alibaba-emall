@@ -17,7 +17,7 @@ public class DomainEventConfig {
     }
     @Autowired
     private ReturnGoodsEvent returnGoodsEvent;
-
+    @Bean
     public DomainEventPublisher returnGoodsEvent() {
         return new DomainEventPublisher("returnGoods", returnGoodsEvent);
     }

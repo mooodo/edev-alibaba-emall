@@ -12,7 +12,7 @@ public class SupplierApplication {
     public static void main(String[] args) {
         SpringApplication.run(SupplierApplication.class, args);
         System.out.println(".........................................");
-        System.out.println(".....The E-Mall Application started......");
+        System.out.println(".....The Supplier Application started....");
         System.out.println(".........................................");
     }
 }

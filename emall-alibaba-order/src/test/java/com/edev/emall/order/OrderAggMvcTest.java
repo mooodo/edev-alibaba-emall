@@ -48,7 +48,7 @@ public class OrderAggMvcTest {
         ).andExpect(status().isOk()).andExpect(content().string(""));
     }
     @Test
-    public void testOrderAndPayoff() throws Exception {
+    public void testPayoffOrderAndReturnGoods() throws Exception {
         String id = "1";
         String json0 = JsonFile.read("json/order/order02.json");
         String excepted0 = JsonFile.read("json/order/excepted02.json");
@@ -56,8 +56,11 @@ public class OrderAggMvcTest {
         mvc.perform(get("/orm/order/remove")
                 .param("orderId", id)
         ).andExpect(status().isOk());
+        mvc.perform(get("/orm/payment/remove")
+                .param("id", id)
+        ).andExpect(status().isOk());
 
-        //place an order
+        // test place an order
         mvc.perform(post("/orm/orderAgg/placeOrder")
                 .content(json0).contentType(MediaType.APPLICATION_JSON)
         ).andExpect(status().isOk());
@@ -65,16 +68,16 @@ public class OrderAggMvcTest {
                 .param("orderId", id)
         ).andExpect(status().isOk()).andExpect(content().json(excepted0));
 
-        //payoff for the order
+        // test payoff for the order
         String excepted1 = JsonFile.read("json/order/excepted03.json");
         mvc.perform(get("/orm/orderAgg/payoff")
-                .param("orderId", id).param("paymentMethod", "alipay")
+                .param("orderId", id).param("paymentMethod", "account")
         ).andExpect(status().isOk());
         mvc.perform(get("/orm/order/load")
                 .param("orderId", id)
         ).andExpect(status().isOk()).andExpect(content().json(excepted1));
 
-        //return goods from the order
+        // test return goods from the order
         String excepted2 = JsonFile.read("json/order/excepted04.json");
         mvc.perform(get("/orm/orderAgg/returnGoods")
                 .param("orderId", id)
@@ -82,5 +85,13 @@ public class OrderAggMvcTest {
         mvc.perform(get("/orm/order/load")
                 .param("orderId", id)
         ).andExpect(status().isOk()).andExpect(content().json(excepted2));
+
+        // clear all data
+        mvc.perform(get("/orm/order/remove")
+                .param("orderId", id)
+        ).andExpect(status().isOk());
+        mvc.perform(get("/orm/payment/remove")
+                .param("id", id)
+        ).andExpect(status().isOk());
     }
 }

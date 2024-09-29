@@ -2,7 +2,7 @@
   "id": 3,
   "customerId": 10001,
   "addressId": 1000100,
-  "status": "create",
+  "status": null,
   "amount": 16836.64,
   "customer": {
     "id": 10001,

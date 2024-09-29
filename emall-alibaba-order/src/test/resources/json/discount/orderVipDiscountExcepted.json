@@ -3,7 +3,7 @@
   "customerId": 10009,
   "addressId": 1000900,
   "amount": 4437.0,
-  "status": "create",
+  "status": null,
   "customer": {
     "id": 10009,
     "name": "张一德",

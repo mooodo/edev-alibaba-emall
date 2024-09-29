@@ -2,8 +2,9 @@ package com.edev.emall.authority.service.impl;
 
 import com.edev.emall.authority.entity.Authority;
 import com.edev.emall.authority.service.AuthorityService;
-import com.edev.emall.utils.ValidUtils;
 import com.edev.support.dao.BasicDao;
+
+import static com.edev.emall.utils.ValidUtils.isNull;
 
 public class AuthorityServiceImpl implements AuthorityService {
     private final BasicDao dao;
@@ -11,9 +12,9 @@ public class AuthorityServiceImpl implements AuthorityService {
         this.dao = dao;
     }
     private void valid(Authority authority) {
-        ValidUtils.isNull(authority, "authority");
-        ValidUtils.isNull(authority.getId(), "id");
-        ValidUtils.isNull(authority.getName(), "name");
+        isNull(authority, "authority");
+        isNull(authority.getId(), "id");
+        isNull(authority.getName(), "name");
     }
     @Override
     public Long create(Authority authority) {

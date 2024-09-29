@@ -5,10 +5,12 @@ import com.edev.emall.inventory.entity.InventoryRecord;
 import com.edev.emall.inventory.service.InventoryRecordService;
 import com.edev.emall.inventory.service.InventoryService;
 import com.edev.support.dao.BasicDao;
-import com.edev.support.exception.ValidException;
 import com.edev.support.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
+import static com.edev.emall.utils.ValidUtils.isError;
+import static com.edev.emall.utils.ValidUtils.isNull;
 
 public class InventoryServiceImpl implements InventoryService {
     @Autowired
@@ -59,10 +61,10 @@ public class InventoryServiceImpl implements InventoryService {
     @Transactional
     public void stockOut(Long productId, Integer quantity) {
         Inventory inventory = check(productId);
-        if(inventory==null) throw new ValidException("No storage for the product: %d", productId);
+        isNull(inventory, "No storage for the product: %d", productId);
         Integer currency = inventory.getQuantity();
         int result = currency-quantity;
-        if(result<0) throw new ValidException("Out of storage for the product: %d", productId);
+        isError(result<0, "Out of storage for the product: %d", productId);
         inventory.setQuantity(result);
         inventory.setUpdateTime(DateUtils.getNow());
         modify(inventory);

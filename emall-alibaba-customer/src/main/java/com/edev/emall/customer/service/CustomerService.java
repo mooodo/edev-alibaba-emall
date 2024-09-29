@@ -14,8 +14,8 @@ public interface CustomerService {
     boolean exists(Long customerId);
     void removeByName(String name);
     Customer loadByName(String name);
-    Collection<Customer> loadForList(List<Long> customerIds);
+    Collection<Customer> loadForList(Collection<Long> customerIds);
     Address loadAddress(Long addressId);
     boolean existsAddress(Long addressId);
-    Collection<Address> loadAddressForList(List<Long> addressIds);
+    Collection<Address> loadAddressForList(Collection<Long> addressIds);
 }
