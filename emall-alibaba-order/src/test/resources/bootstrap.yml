@@ -52,6 +52,10 @@ spring:
     timeout: 1000
 server:
   port: 9004
+stubrunner:
+  idsToServiceIds:
+    emall-alibaba-supplier: emall-supplier
+    emall-alibaba-customer: emall-customer
 ---
 spring:
   profiles: docker

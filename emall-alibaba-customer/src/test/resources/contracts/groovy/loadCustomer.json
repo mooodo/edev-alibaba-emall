@@ -1,0 +1,81 @@
+{
+  "id": 10001,
+  "name": "李秋水",
+  "gender": "female",
+  "identification": "510110197910012312",
+  "phoneNumber": "13388990123",
+  "addresses": [
+    {
+      "id": 1000100,
+      "customerId": 10001,
+      "countryId": 1000,
+      "provinceId": 420000,
+      "cityId": 420100,
+      "districtId": 420111,
+      "detailAddress": "珞瑜路726号",
+      "phoneNumber": "13300224466",
+      "isDefault": false,
+      "country": {
+        "id": 1000,
+        "name": "中国",
+        "countryCode": "86",
+        "currencyType": "RMB"
+      },
+      "province": {
+        "id": 420000,
+        "name": "湖北省",
+        "countryId": 1000,
+        "provinceCode": "42"
+      },
+      "city": {
+        "id": 420100,
+        "name": "武汉市",
+        "provinceId": 420000,
+        "cityCode": "4201"
+      },
+      "district": {
+        "id": 420111,
+        "name": "洪山区",
+        "provinceId": 420000,
+        "cityId": 420100,
+        "districtCode": "420111"
+      }
+    },
+    {
+      "id": 1000101,
+      "customerId": 10001,
+      "countryId": 1000,
+      "provinceId": 420000,
+      "cityId": 421000,
+      "districtId": 421002,
+      "detailAddress": "北京西路410号",
+      "phoneNumber": "13388990123",
+      "isDefault": false,
+      "country": {
+        "id": 1000,
+        "name": "中国",
+        "countryCode": "86",
+        "currencyType": "RMB"
+      },
+      "province": {
+        "id": 420000,
+        "name": "湖北省",
+        "countryId": 1000,
+        "provinceCode": "42"
+      },
+      "city": {
+        "id": 421000,
+        "name": "荆州市",
+        "provinceId": 420000,
+        "cityCode": "4210"
+      },
+      "district": {
+        "id": 421002,
+        "name": "沙市区",
+        "provinceId": 420000,
+        "cityId": 421000,
+        "districtCode": "421002"
+      }
+    }
+  ]
+}
