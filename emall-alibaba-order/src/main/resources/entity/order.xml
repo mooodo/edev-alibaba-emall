@@ -19,28 +19,6 @@
         <join name="orderItems" joinKey="orderId" joinType="oneToMany" isAggregation="true"
               class="com.edev.emall.order.entity.OrderItem"/>
     </do>
-    <do class="com.edev.emall.order.entity.Customer">
-        <property name="id" column="id" isPrimaryKey="true"/>
-        <property name="name" column="name"/>
-        <property name="gender" column="gender"/>
-        <property name="email" column="email"/>
-        <property name="identification" column="identification"/>
-        <property name="birthdate" column="birthdate"/>
-        <property name="phoneNumber" column="phone_number"/>
-        <property name="createTime" column="create_time"/>
-        <property name="modifyTime" column="modify_time"/>
-    </do>
-    <do class="com.edev.emall.order.entity.Address">
-        <property name="id" column="id" isPrimaryKey="true"/>
-        <property name="customerId" column="customer_id"/>
-        <property name="countryId" column="country_id"/>
-        <property name="provinceId" column="province_id"/>
-        <property name="cityId" column="city_id"/>
-        <property name="districtId" column="district_id"/>
-        <property name="detailAddress" column="detail_address"/>
-        <property name="phoneNumber" column="phone_number"/>
-        <property name="isDefault" column="is_default"/>
-    </do>
     <do class="com.edev.emall.order.entity.OrderItem" tableName="t_order_item">
         <property name="id" column="id" isPrimaryKey="true"/>
         <property name="orderId" column="order_id"/>
@@ -86,19 +64,5 @@
         <property name="discount" column="discount"/>
         <property name="discountType" column="discount_type" isDiscriminator="true"/>
         <property name="productId" column="product_id"/>
-    </do>
-    <do class="com.edev.emall.order.entity.Product">
-        <property name="id" column="id" isPrimaryKey="true"/>
-        <property name="name" column="name"/>
-        <property name="description" column="description"/>
-        <property name="price" column="price"/>
-        <property name="supplierId" column="supplier_id"/>
-        <property name="categoryId" column="category_id"/>
-        <property name="brandId" column="brand_id"/>
-        <property name="image" column="image"/>
-        <property name="tip" column="tip"/>
-        <property name="status" column="status"/>
-        <property name="createTime" column="create_time"/>
-        <property name="modifyTime" column="modify_time"/>
     </do>
 </dobjs>

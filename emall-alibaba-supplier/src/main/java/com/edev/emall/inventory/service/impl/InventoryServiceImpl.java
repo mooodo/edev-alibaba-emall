@@ -39,7 +39,7 @@ public class InventoryServiceImpl implements InventoryService {
             InventoryRecord record = new InventoryRecord();
             record.setProductId(productId);
             record.setQuantity(quantity);
-            record.setOperation("stock in");
+            record.setOperation("create");
             record.setUpdateTime(DateUtils.getNow());
             inventoryRecordService.insert(record);
         } else {

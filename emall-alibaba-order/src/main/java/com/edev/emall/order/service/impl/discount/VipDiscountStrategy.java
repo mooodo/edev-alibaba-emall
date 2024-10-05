@@ -1,5 +1,6 @@
 package com.edev.emall.order.service.impl.discount;
 
+import com.edev.emall.customer.entity.Vip;
 import com.edev.emall.order.entity.*;
 import com.edev.emall.order.service.DiscountService;
 import com.edev.emall.order.service.feign.VipService;

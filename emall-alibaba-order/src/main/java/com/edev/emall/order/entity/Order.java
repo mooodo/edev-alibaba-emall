@@ -1,5 +1,7 @@
 package com.edev.emall.order.entity;
 
+import com.edev.emall.customer.entity.Address;
+import com.edev.emall.customer.entity.Customer;
 import com.edev.support.entity.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package com.edev.emall.order.entity;
+package com.edev.emall.product.entity;
 
 import com.edev.support.entity.Entity;
 import lombok.Data;
@@ -21,4 +21,6 @@ public class Product extends Entity<Long> {
     private String status; // 商品状态，如上架、下架、缺货等
     private Date createTime; // 创建时间
     private Date modifyTime; // 更新时间
+    private ProductCategory productCategory;
+    private Brand brand;
 }

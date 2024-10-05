@@ -1,7 +1,7 @@
 package com.edev.emall.order.service.feign.fallback;
 
-import com.edev.emall.order.entity.Product;
 import com.edev.emall.order.service.feign.ProductService;
+import com.edev.emall.product.entity.Product;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

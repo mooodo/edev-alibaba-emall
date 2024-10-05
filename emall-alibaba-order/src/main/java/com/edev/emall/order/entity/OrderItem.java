@@ -1,5 +1,6 @@
 package com.edev.emall.order.entity;
 
+import com.edev.emall.product.entity.Product;
 import com.edev.support.entity.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,7 +1,7 @@
 package com.edev.emall.order.service.feign;
 
-import com.edev.emall.order.entity.Address;
-import com.edev.emall.order.entity.Customer;
+import com.edev.emall.customer.entity.Address;
+import com.edev.emall.customer.entity.Customer;
 import com.edev.emall.order.service.feign.fallback.CustomerServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;

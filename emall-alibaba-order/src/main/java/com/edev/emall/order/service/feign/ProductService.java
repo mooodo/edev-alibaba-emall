@@ -1,7 +1,7 @@
 package com.edev.emall.order.service.feign;
 
-import com.edev.emall.order.entity.Product;
 import com.edev.emall.order.service.feign.fallback.ProductServiceImpl;
+import com.edev.emall.product.entity.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;

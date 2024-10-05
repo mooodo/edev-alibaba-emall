@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dobjs>
+    <do class="com.edev.emall.product.entity.Product">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="name" column="name"/>
+        <property name="description" column="description"/>
+        <property name="price" column="price"/>
+        <property name="supplierId" column="supplier_id"/>
+        <property name="categoryId" column="category_id"/>
+        <property name="brandId" column="brand_id"/>
+        <property name="image" column="image"/>
+        <property name="tip" column="tip"/>
+        <property name="status" column="status"/>
+        <property name="createTime" column="create_time"/>
+        <property name="modifyTime" column="modify_time"/>
+        <join name="productCategory" joinKey="categoryId" joinType="manyToOne"
+              class="com.edev.emall.product.entity.ProductCategory"/>
+        <join name="brand" joinKey="brandId" joinType="manyToOne"
+              class="com.edev.emall.product.entity.Brand"/>
+    </do>
+    <do class="com.edev.emall.product.entity.ProductCategory">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="name" column="name"/>
+        <property name="description" column="description"/>
+        <property name="parentId" column="parent_id"/>
+        <property name="layer" column="layer"/>
+    </do>
+    <do class="com.edev.emall.product.entity.Brand">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="name" column="name"/>
+        <property name="description" column="description"/>
+    </do>
+</dobjs>

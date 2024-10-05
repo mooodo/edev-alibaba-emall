@@ -1,7 +1,7 @@
 package com.edev.emall.order.service.feign.fallback;
 
-import com.edev.emall.order.entity.Address;
-import com.edev.emall.order.entity.Customer;
+import com.edev.emall.customer.entity.Address;
+import com.edev.emall.customer.entity.Customer;
 import com.edev.emall.order.service.feign.CustomerService;
 import org.springframework.stereotype.Component;
 

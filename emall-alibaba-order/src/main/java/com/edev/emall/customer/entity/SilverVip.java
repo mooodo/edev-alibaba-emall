@@ -1,4 +1,4 @@
-package com.edev.emall.order.entity;
+package com.edev.emall.customer.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

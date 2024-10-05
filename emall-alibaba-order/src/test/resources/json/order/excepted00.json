@@ -9,7 +9,6 @@
     "name": "李秋水",
     "gender": "female",
     "identification": "510110197910012312",
-    "birthdate": "1979-10-01 00:00:00",
     "phoneNumber": "13388990123"
   },
   "address": {
@@ -65,17 +64,15 @@
         "image": "/static/img/product1.jpg",
         "tip": "自营",
         "status": "on sale",
-        "supplier": {
-          "id": 20004,
-          "name": "苹果公司(Apple Inc.)",
-          "phoneNumber": "010-65128989",
-          "email": "business@apple.com"
-        },
         "productCategory": {
           "id": 100100,
           "name": "智能手机",
           "parentId": 100000,
           "layer": 2
+        },
+        "brand": {
+          "id": 1000,
+          "name": "Apple"
         }
       }
     }

@@ -1,6 +1,6 @@
 package com.edev.emall.order.service.feign;
 
-import com.edev.emall.order.entity.Vip;
+import com.edev.emall.customer.entity.Vip;
 import com.edev.emall.order.service.feign.fallback.VipServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;

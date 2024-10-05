@@ -1,0 +1,14 @@
+{
+  "id": 10009,
+  "vipLevel": "golden",
+  "points": 3000.0,
+  "accumulatedPoints": 20200.0,
+  "customer": {
+    "id": 10009,
+    "name": "张一德",
+    "gender": "male",
+    "identification": "510212200004213344",
+    "phoneNumber": "13656781234"
+  },
+  "creditLimit": 50000.0
+}

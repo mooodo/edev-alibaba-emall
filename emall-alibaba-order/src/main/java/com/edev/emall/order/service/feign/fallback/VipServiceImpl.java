@@ -1,6 +1,6 @@
 package com.edev.emall.order.service.feign.fallback;
 
-import com.edev.emall.order.entity.Vip;
+import com.edev.emall.customer.entity.Vip;
 import com.edev.emall.order.service.feign.VipService;
 import org.springframework.stereotype.Component;
 

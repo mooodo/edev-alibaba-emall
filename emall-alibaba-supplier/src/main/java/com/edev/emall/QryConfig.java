@@ -15,8 +15,6 @@ import org.springframework.context.annotation.Configuration;
 public class QryConfig {
     @Autowired @Qualifier("basicDaoWithCache")
     private BasicDao basicDaoWithCache;
-    @Autowired @Qualifier("repositoryWithCache")
-    private BasicDao repositoryWithCache;
     @Bean
     public QueryDao supplierQryDao() {
         return new QueryDaoMybastisImplForDdd(
@@ -25,8 +23,7 @@ public class QryConfig {
     }
     @Bean
     public QueryService supplierQry() {
-        return new AutofillQueryServiceImpl(
-                supplierQryDao(), basicDaoWithCache);
+        return new QueryServiceImpl(supplierQryDao());
     }
     @Bean
     public QueryDao staffQryDao() {

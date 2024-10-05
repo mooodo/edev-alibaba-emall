@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dobjs>
+    <do class="com.edev.emall.customer.entity.Customer">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="name" column="name"/>
+        <property name="gender" column="gender"/>
+        <property name="email" column="email"/>
+        <property name="identification" column="identification"/>
+        <property name="birthdate" column="birthdate"/>
+        <property name="phoneNumber" column="phone_number"/>
+        <property name="createTime" column="create_time"/>
+        <property name="modifyTime" column="modify_time"/>
+        <join name="addresses" joinKey="customerId" joinType="oneToMany"
+              class="com.edev.emall.customer.entity.Address"/>
+    </do>
+    <do class="com.edev.emall.customer.entity.Address">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="customerId" column="customer_id"/>
+        <property name="countryId" column="country_id"/>
+        <property name="provinceId" column="province_id"/>
+        <property name="cityId" column="city_id"/>
+        <property name="districtId" column="district_id"/>
+        <property name="detailAddress" column="detail_address"/>
+        <property name="phoneNumber" column="phone_number"/>
+        <property name="isDefault" column="is_default"/>
+        <join name="country" joinKey="countryId" joinType="manyToOne"
+              class="com.edev.emall.customer.entity.Country"/>
+        <join name="province" joinKey="provinceId" joinType="manyToOne"
+              class="com.edev.emall.customer.entity.Province"/>
+        <join name="city" joinKey="cityId" joinType="manyToOne"
+              class="com.edev.emall.customer.entity.City"/>
+        <join name="district" joinKey="districtId" joinType="manyToOne"
+              class="com.edev.emall.customer.entity.District"/>
+    </do>
+    <do class="com.edev.emall.customer.entity.Country">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="name" column="name"/>
+        <property name="countryCode" column="country_code"/>
+        <property name="currencyType" column="currency_type"/>
+    </do>
+    <do class="com.edev.emall.customer.entity.Province">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="name" column="name"/>
+        <property name="countryId" column="country_id"/>
+        <property name="provinceCode" column="province_code"/>
+    </do>
+    <do class="com.edev.emall.customer.entity.City">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="name" column="name"/>
+        <property name="provinceId" column="province_id"/>
+        <property name="cityCode" column="city_code"/>
+    </do>
+    <do class="com.edev.emall.customer.entity.District">
+        <property name="id" column="id" isPrimaryKey="true"/>
+        <property name="name" column="name"/>
+        <property name="provinceId" column="province_id"/>
+        <property name="cityId" column="city_id"/>
+        <property name="districtCode" column="district_code"/>
+    </do>
+</dobjs>

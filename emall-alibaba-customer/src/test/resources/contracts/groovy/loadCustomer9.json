@@ -1,0 +1,45 @@
+{
+  "id": 10009,
+  "name": "张一德",
+  "gender": "male",
+  "identification": "510212200004213344",
+  "phoneNumber": "13656781234",
+  "addresses": [
+    {
+      "id": 1000900,
+      "customerId": 10009,
+      "countryId": 1000,
+      "provinceId": 510000,
+      "cityId": 510100,
+      "districtId": 510105,
+      "detailAddress": "宽窄巷子",
+      "phoneNumber": null,
+      "isDefault": false,
+      "country": {
+        "id": 1000,
+        "name": "中国",
+        "countryCode": "86",
+        "currencyType": "RMB"
+      },
+      "province": {
+        "id": 510000,
+        "name": "四川省",
+        "countryId": 1000,
+        "provinceCode": "51"
+      },
+      "city": {
+        "id": 510100,
+        "name": "成都市",
+        "provinceId": 510000,
+        "cityCode": "5101"
+      },
+      "district": {
+        "id": 510105,
+        "name": "青羊区",
+        "provinceId": 510000,
+        "cityId": 510100,
+        "districtCode": "510105"
+      }
+    }
+  ]
+}

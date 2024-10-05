@@ -20,6 +20,11 @@ logging:
 ---
 spring:
   profiles: dev
+  rabbitmq:
+    host: kubernetes
+    port: 31672
+    username: guest
+    password: guest
   cloud:
     nacos:
       discovery:
@@ -50,17 +55,3 @@ spring:
     timeout: 1000
 server:
   port: 9001
----
-spring:
-  profiles: docker
-  cloud:
-    nacos:
-      discovery:
-        server-addr: ${NACOS_ADDR}
-        username: ${NACOS_USR:nacos}
-        password: ${NACOS_PWD:nacos}
-      config:
-        server-addr: ${NACOS_ADDR}
-        file-extension: yaml
-server:
-  port: ${SERVICE_PORT:9001}

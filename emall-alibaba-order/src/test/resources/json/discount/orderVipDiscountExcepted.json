@@ -10,7 +10,6 @@
     "gender": "male",
     "email": null,
     "identification": "510212200004213344",
-    "birthdate": "2000-04-21 00:00:00",
     "phoneNumber": "13656781234"
   },
   "address": {
@@ -60,18 +59,21 @@
       "product": {
         "id": 30001,
         "name": "Apple iPhone X 256GB 深空灰色 移动联通电信4G手机",
-        "description": null,
         "price": 4000.0,
         "supplierId": 20004,
         "categoryId": 100100,
         "image": "/static/img/product1.jpg",
         "tip": "自营",
         "status": "on sale",
-        "supplier": {
-          "id": 20004,
-          "name": "苹果公司(Apple Inc.)",
-          "phoneNumber": "010-65128989",
-          "email": "business@apple.com"
+        "productCategory": {
+          "id": 100100,
+          "name": "智能手机",
+          "parentId": 100000,
+          "layer": 2
+        },
+        "brand": {
+          "id": 1000,
+          "name": "Apple"
         }
       }
     },
@@ -92,12 +94,15 @@
         "image": "/static/img/product4.jpg",
         "tip": "自营",
         "status": "on sale",
-        "supplier": {
-          "id": 20002,
-          "name": "上海晨光文具股份有限公司(M&G)",
-          "phoneNumber": "010-67891122",
-          "email": "business@chenguang.com",
-          "address": "上海市奉贤区金钱公路3469号3号楼"
+        "productCategory": {
+          "id": 100500,
+          "name": "电纸书",
+          "parentId": 100000,
+          "layer": 2
+        },
+        "brand": {
+          "id": 1002,
+          "name": "Kindle"
         }
       }
     }

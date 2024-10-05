@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @AutoConfigureStubRunner(ids= {"com.edev.emall:emall-alibaba-supplier:+:stubs:9003",
-        "com.edev.emall:edev-alibaba-customer:+:stubs:9002"},
+        "com.edev.emall:emall-alibaba-customer:+:stubs:9002"},
         stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 public class OrderDiscountMvcTest {
     @Autowired

@@ -26,7 +26,7 @@ public class QryConfig {
     @Bean
     public QueryService customerQry() {
         return new AutofillQueryServiceImpl(
-                customerQryDao(), basicDaoWithCache);
+                customerQryDao(), repositoryWithCache);
     }
     @Bean
     public QueryDao accountQryDao() {

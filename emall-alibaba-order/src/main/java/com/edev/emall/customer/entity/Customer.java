@@ -1,4 +1,4 @@
-package com.edev.emall.order.entity;
+package com.edev.emall.customer.entity;
 
 import com.edev.support.entity.Entity;
 import lombok.Data;
