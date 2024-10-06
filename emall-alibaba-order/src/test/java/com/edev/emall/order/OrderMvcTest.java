@@ -26,6 +26,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class OrderMvcTest {
     @Autowired
     private MockMvc mvc;
+    /*
+    1. 初始化
+    2. 创建订单，同时保存订单明细
+    3. 更新订单，同时比较并增删改订单明细
+    4. 删除订单，同时删除订单明细
+     */
     @Test
     public void testCreateAndModifyOrder() throws Exception {
         String id = "1";

@@ -21,6 +21,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class SupplierMvcTest {
     @Autowired
     private MockMvc mvc;
+    /*
+    1. 初始化
+    2. 创建一个新的供应商
+    3. 更新供应商信息
+    4. 删除供应商信息
+     */
     @Test
     public void testCreateAndModifySupplier() throws Exception {
         String id = "1";

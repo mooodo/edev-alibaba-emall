@@ -21,6 +21,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class StaffMvcTest {
     @Autowired
     private MockMvc mvc;
+    /*
+    1. 初始化
+    2. 为某个供应商添加员工
+    3. 更新员工信息
+    4. 删除员工信息
+     */
     @Test
     public void testCreateAndModifyStaff() throws Exception {
         String id = "1";

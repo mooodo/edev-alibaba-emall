@@ -19,6 +19,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class InventoryMvcTest {
     @Autowired
     private MockMvc mvc;
+    /*
+    1. 初始化
+    2. 为商品首次入库，入库前先创建库存
+    3. 再次入库
+    4. 出库/库存扣减
+    5. 删除库存
+     */
     @Test
     public void testStockInAndStockOut() throws Exception {
         String id = "1";
@@ -35,12 +42,19 @@ public class InventoryMvcTest {
         ).andExpect(status().isOk()).andExpect(content().json(excepted0));
 
         String excepted1 = JsonFile.read("json/inventory/excepted01.json");
-        mvc.perform(get("/orm/inventory/stockOut")
+        mvc.perform(get("/orm/inventory/stockIn")
                 .param("productId", id).param("quantity", "500")
         ).andExpect(status().isOk());
         mvc.perform(get("/orm/inventory/check")
                 .param("productId", id)
         ).andExpect(status().isOk()).andExpect(content().json(excepted1));
+
+        mvc.perform(get("/orm/inventory/stockOut")
+                .param("productId", id).param("quantity", "500")
+        ).andExpect(status().isOk());
+        mvc.perform(get("/orm/inventory/check")
+                .param("productId", id)
+        ).andExpect(status().isOk()).andExpect(content().json(excepted0));
 
         mvc.perform(get("/orm/inventory/remove")
                 .param("productId", id)

@@ -21,6 +21,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class DiscountMvcTest {
     @Autowired
     private MockMvc mvc;
+    /*
+    1. 初始化
+    2. 创建折扣信息
+    3. 更新折扣信息
+    4. 删除折扣信息
+     */
     @Test
     public void testSaveAndDelete() throws Exception {
         String id = "1";
@@ -35,7 +41,6 @@ public class DiscountMvcTest {
         mvc.perform(get("/orm/discount/loadById")
                 .param("discountId", id)
         ).andExpect(status().isOk()).andExpect(content().json(excepted));
-
 
         String json1 = JsonFile.read("json/discount/discount1.json");
         String excepted1 = JsonFile.read("json/discount/excepted1.json");

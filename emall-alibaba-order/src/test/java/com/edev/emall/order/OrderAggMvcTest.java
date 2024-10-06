@@ -26,6 +26,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class OrderAggMvcTest {
     @Autowired
     private MockMvc mvc;
+    /*
+    1. 初始化
+    2. 执行下单
+    3. 取消订单
+     */
     @Test
     public void testCancelOrder() throws Exception {
         String id = "1";
@@ -52,6 +57,13 @@ public class OrderAggMvcTest {
                 .param("orderId", id)
         ).andExpect(status().isOk()).andExpect(content().string(""));
     }
+    /*
+    1. 初始化
+    2. 执行下单
+    3. 支付订单，用本地账户支付
+    4. 退货，并在本地账户中退款
+    5. 删除订单
+     */
     @Test
     public void testPayoffOrderAndReturnGoods() throws Exception {
         String id = "1";

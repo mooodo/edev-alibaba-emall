@@ -19,6 +19,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class AccountMvcTest {
     @Autowired
     private MockMvc mvc;
+    /*
+    1. 初始化
+    2. 为客户创建账户并首次充值
+    3. 再次充值
+    4. 为订单进行支付
+    5. 订单退货后的退款
+    6. 注销账户
+     */
     @Test
     public void testTopUpAndPayoff() throws Exception {
         String id = "10010";

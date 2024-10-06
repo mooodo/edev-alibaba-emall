@@ -21,6 +21,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class VipMvcTest {
     @Autowired
     private MockMvc mvc;
+    /*
+    1. 初始化
+    2. 为客户注册会员
+    3. 更新会员信息
+    4. 从银卡会员升级成金卡会员
+    5. 注销会员
+     */
     @Test
     public void testRegisterAndModifyVip() throws Exception {
         String id = "10001";
@@ -67,6 +74,13 @@ public class VipMvcTest {
                 .param("vipId", id)
         ).andExpect(status().isOk()).andExpect(content().string(""));
     }
+    /*
+    1. 初始化
+    2. 为客户注册会员
+    3. 购买商品时为会员积分
+    4. 会员用积分兑换商品
+    5. 注销会员
+     */
     @Test
     public void testAccumulateAndRedeemPoints() throws Exception {
         String id = "10015";
