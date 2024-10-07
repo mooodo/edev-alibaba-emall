@@ -58,3 +58,23 @@ spec:
       targetPort: 9009
   selector:
     app: emall-alibaba-gateway
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-edev-emall
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: emall
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: emall-alibaba-gateway
+                port:
+                  number: 9009
