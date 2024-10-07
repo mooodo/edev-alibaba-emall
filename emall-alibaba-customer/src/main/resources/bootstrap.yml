@@ -79,10 +79,12 @@ spring:
     nacos:
       discovery:
         server-addr: ${NACOS_ADDR}
+        group: EMALL_GROUP
         username: ${NACOS_USR:nacos}
         password: ${NACOS_PWD:nacos}
       config:
         server-addr: ${NACOS_ADDR}
+        group: EMALL_GROUP
         file-extension: yaml
 server:
   port: ${SERVICE_PORT:9002}
