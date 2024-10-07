@@ -1,0 +1,60 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  labels:
+    app: emall-alibaba-order
+  name: emall-alibaba-order
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emall-alibaba-order
+  template:
+    metadata:
+      name: emall-alibaba-order
+      labels:
+        app: emall-alibaba-order
+        project: edev-alibaba-emall
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 50
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: "app"
+                      operator: In
+                      values:
+                        - emall-alibaba-order
+                        - edev-alibaba-emall
+                topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: emall-alibaba-order
+          image: repository:5000/emall-alibaba-order:<VERSION>
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 500m
+              memory: 1500Mi
+            requests:
+              cpu: 100m
+              memory: 1000Mi
+          env:
+            - name: NACOS_ADDR
+              value: "nacos:8848"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: emall-alibaba-order
+  name: emall-alibaba-order
+  namespace: default
+spec:
+  ports:
+    - port: 9004
+      targetPort: 9004
+  selector:
+    app: emall-alibaba-order
