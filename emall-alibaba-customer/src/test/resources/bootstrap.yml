@@ -35,9 +35,9 @@ spring:
         dashboard: localhost:8858
       eager: true
   datasource:
-    url: jdbc:mysql://master:32306/emall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
-    username: emall
-    password: emall1234
+    url: jdbc:mysql://master:32306/emallCustomer?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: customer
+    password: customer1234
     type: com.alibaba.druid.pool.DruidDataSource
   redis:
     database: 0
