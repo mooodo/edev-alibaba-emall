@@ -1,7 +1,6 @@
 package com.edev.emall.event;
 
 import com.edev.emall.customer.service.AccountService;
-import com.edev.emall.event.entity.Order;
 import com.edev.support.event.DomainEventObject;
 import com.edev.support.event.DomainEventReceiver;
 import lombok.extern.slf4j.Slf4j;

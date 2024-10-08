@@ -22,7 +22,7 @@ public class ValidUtils {
     public interface ValidFunc {
         boolean apply(Long id);
     }
-    public static void isError(@NonNull Boolean expression, String desc, Object... objects) {
+    public static void isError(boolean expression, String desc, Object... objects) {
         if(expression) throw new ValidException(msg(desc, objects));
     }
 }

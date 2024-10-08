@@ -22,21 +22,9 @@ public class DefaultUserDetails implements UserDetails {
         user.getRoles().forEach(role -> authorities.addAll(role.getAuthorities()));
 
         Collection<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        authorities.forEach(authority -> {
-            grantedAuthorities.add(new GrantedAuthority() {
-                @Override
-                public String getAuthority() {
-                    return authority.getName();
-                }
-            });
-        });
+        authorities.forEach(authority -> grantedAuthorities.add((GrantedAuthority) authority::getName));
 
-        grantedAuthorities.add(new GrantedAuthority() {
-            @Override
-            public String getAuthority() {
-                return user.getUserType();
-            }
-        });
+        grantedAuthorities.add((GrantedAuthority) user::getUserType);
         return grantedAuthorities.stream().distinct().collect(Collectors.toSet());
     }
 

@@ -1,12 +1,10 @@
 package com.edev.emall.event.entity;
 
 import com.edev.support.entity.Entity;
-import com.edev.support.utils.DateUtils;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.Date;
-import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

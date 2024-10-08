@@ -21,8 +21,6 @@ public class PayoffEventReceiver implements DomainEventReceiver {
     public void apply(DomainEventObject event) {
         Order order = event.convertToEntity(Order.class);
         log.debug("stock out for each of the order items");
-        order.getOrderItems().forEach(orderItem -> {
-            inventoryService.stockOut(orderItem.getProductId(), orderItem.getQuantity());
-        });
+        order.getOrderItems().forEach(orderItem -> inventoryService.stockOut(orderItem.getProductId(), orderItem.getQuantity()));
     }
 }

@@ -14,9 +14,10 @@ public class DefaultUserDetailsService implements UserDetailsService {
     @Autowired
     private UserService userService;
     @Override
-    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String name) {
         User user = userService.loadByName(name);
-        if(user==null) throw new UsernameNotFoundException(String.format("No found the user[%s]", name));
+        if(user==null)
+            throw new UsernameNotFoundException(String.format("No found the user[%s]", name));
         return new DefaultUserDetails(user);
     }
 }

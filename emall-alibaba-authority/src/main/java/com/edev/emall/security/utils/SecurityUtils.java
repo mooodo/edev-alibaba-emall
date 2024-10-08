@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SecurityUtils {
-    private final static PasswordEncoder passwordEncoder = DefaultPasswordEncoder.build();
+    private static final PasswordEncoder passwordEncoder = DefaultPasswordEncoder.build();
     public static boolean passwordIsMatch(String source, String target) {
         return passwordEncoder.matches(source, target);
     }

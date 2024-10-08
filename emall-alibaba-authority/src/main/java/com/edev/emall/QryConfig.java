@@ -5,7 +5,6 @@ import com.edev.support.dao.QueryDao;
 import com.edev.support.ddd.AutofillQueryServiceImpl;
 import com.edev.support.ddd.QueryDaoMybastisImplForDdd;
 import com.edev.support.query.QueryService;
-import com.edev.support.query.impl.QueryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

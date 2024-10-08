@@ -21,8 +21,6 @@ public class ReturnGoodsEventReceiver implements DomainEventReceiver {
     public void apply(DomainEventObject event) {
         Order order = event.convertToEntity(Order.class);
         log.debug("stock in for each of the order items");
-        order.getOrderItems().forEach(orderItem -> {
-            inventoryService.stockIn(orderItem.getProductId(), orderItem.getQuantity());
-        });
+        order.getOrderItems().forEach(orderItem -> inventoryService.stockIn(orderItem.getProductId(), orderItem.getQuantity()));
     }
 }
