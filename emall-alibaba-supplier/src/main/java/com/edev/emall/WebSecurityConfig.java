@@ -16,7 +16,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().disable();
         http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/orm/**","/query/**","/list/**").permitAll()
+                .antMatchers("/orm/**","/query/**","/list/**","/actuator/**").permitAll()
                 .anyRequest().authenticated().and()
                 .formLogin()
                 //.loginPage(loginUrl)

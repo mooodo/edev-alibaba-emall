@@ -30,6 +30,8 @@ spec:
                         - emall-alibaba-customer
                         - edev-alibaba-emall
                 topologyKey: "kubernetes.io/hostname"
+      nodeSelector:
+        project: emall
       containers:
         - name: emall-alibaba-customer
           image: repository:5000/emall-alibaba-customer:<VERSION>
@@ -44,6 +46,15 @@ spec:
           env:
             - name: NACOS_ADDR
               value: "nacos:8848"
+          livenessProbe:
+            failureThreshold: 5
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5
+            httpGet:
+              scheme: HTTP
+              port: 9002
+              path: /actuator/health
 ---
 kind: Service
 apiVersion: v1
