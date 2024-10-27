@@ -28,10 +28,11 @@ spec:
                       operator: In
                       values:
                         - emall-alibaba-gateway
-                        - edev-alibaba-emall
+                    - key: "project"
+                      operator: In
+                      values:
+                        - emall-alibaba-customer
                 topologyKey: "kubernetes.io/hostname"
-      nodeSelector:
-        project: emall
       containers:
         - name: emall-alibaba-gateway
           image: repository:5000/emall-alibaba-gateway:<VERSION>
@@ -42,13 +43,13 @@ spec:
               memory: 1500Mi
             requests:
               cpu: 100m
-              memory: 1000Mi
+              memory: 500Mi
           env:
             - name: NACOS_ADDR
               value: "nacos:8848"
           livenessProbe:
             failureThreshold: 5
-            initialDelaySeconds: 20
+            initialDelaySeconds: 50
             periodSeconds: 10
             timeoutSeconds: 5
             httpGet:

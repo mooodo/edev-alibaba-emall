@@ -18,12 +18,15 @@ public class DefaultUserDetails implements UserDetails {
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        // add all the authorities of user and role together.
         List<Authority> authorities = new ArrayList<>(user.getAuthorities());
         user.getRoles().forEach(role -> authorities.addAll(role.getAuthorities()));
 
+        // convert authority to GrantedAuthority
         Collection<GrantedAuthority> grantedAuthorities = new HashSet<>();
         authorities.forEach(authority -> grantedAuthorities.add((GrantedAuthority) authority::getName));
 
+        // add the user type as an authority
         grantedAuthorities.add((GrantedAuthority) user::getUserType);
         return grantedAuthorities.stream().distinct().collect(Collectors.toSet());
     }

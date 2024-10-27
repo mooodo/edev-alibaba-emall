@@ -1,5 +1,6 @@
 package com.edev.emall.security;
 
+import com.edev.emall.security.service.DefaultPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
@@ -34,10 +36,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
     @Autowired
     private AuthenticationProvider authenticationProvider;
+    private final PasswordEncoder passwordEncoder = DefaultPasswordEncoder.build();
     // Define how to authenticate and authorise
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder)
                 .and().authenticationProvider(authenticationProvider);
     }
 }
