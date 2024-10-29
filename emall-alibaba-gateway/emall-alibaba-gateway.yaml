@@ -31,7 +31,7 @@ spec:
                     - key: "project"
                       operator: In
                       values:
-                        - emall-alibaba-customer
+                        - edev-alibaba-emall
                 topologyKey: "kubernetes.io/hostname"
       containers:
         - name: emall-alibaba-gateway
