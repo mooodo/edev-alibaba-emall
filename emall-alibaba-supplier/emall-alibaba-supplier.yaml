@@ -70,3 +70,14 @@ spec:
       targetPort: 9003
   selector:
     app: emall-alibaba-supplier
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: emall-alibaba-supplier-pdb
+  namespace: default
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: emall-alibaba-supplier

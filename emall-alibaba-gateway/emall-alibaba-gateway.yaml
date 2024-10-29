@@ -90,3 +90,14 @@ spec:
                 name: emall-alibaba-gateway
                 port:
                   number: 9009
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: emall-alibaba-gateway-pdb
+  namespace: default
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: emall-alibaba-gateway

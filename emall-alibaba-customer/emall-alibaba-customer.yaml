@@ -70,3 +70,14 @@ spec:
       targetPort: 9002
   selector:
     app: emall-alibaba-customer
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: emall-alibaba-customer-pdb
+  namespace: default
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: emall-alibaba-customer
