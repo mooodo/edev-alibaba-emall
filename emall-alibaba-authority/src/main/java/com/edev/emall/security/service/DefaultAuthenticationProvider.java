@@ -1,6 +1,6 @@
 package com.edev.emall.security.service;
 
-import com.edev.emall.security.utils.SecurityUtils;
+import com.edev.emall.security.utils.SecurityHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -15,12 +15,14 @@ import org.springframework.stereotype.Service;
 public class DefaultAuthenticationProvider implements AuthenticationProvider, AuthenticationManager {
     @Autowired
     private UserDetailsService userDetailsService;
+    @Autowired
+    private SecurityHelper securityHelper;
     @Override
     public Authentication authenticate(Authentication authentication) {
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-        if(SecurityUtils.passwordIsMatch(password, userDetails.getPassword()))
+        if(securityHelper.passwordIsMatch(password, userDetails.getPassword()))
             return new UsernamePasswordAuthenticationToken(username, password,
                     userDetails.getAuthorities());
         throw new BadCredentialsException("The username or password is wrong!");

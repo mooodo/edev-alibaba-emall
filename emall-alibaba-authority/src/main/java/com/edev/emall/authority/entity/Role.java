@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -13,8 +13,8 @@ public class Role extends Entity<Long> {
     private Long id;
     private String name;
     private String description;
-    private List<Authority> authorities = new ArrayList<>();
-    private List<User> users = new ArrayList<>();
+    private Collection<Authority> authorities = new ArrayList<>();
+    private Collection<User> users = new ArrayList<>();
 
     public void addAuthority(Authority authority) {
         this.authorities.add(authority);

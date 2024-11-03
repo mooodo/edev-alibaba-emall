@@ -13,4 +13,11 @@
         <version>1.0.0</version>
         <relativePath/>
     </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+    </dependencies>
 </project>

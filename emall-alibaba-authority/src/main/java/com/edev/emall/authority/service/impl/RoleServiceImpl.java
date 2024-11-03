@@ -4,6 +4,9 @@ import com.edev.emall.authority.entity.Role;
 import com.edev.emall.authority.service.RoleService;
 import com.edev.support.dao.BasicDao;
 
+import java.util.Collection;
+import java.util.List;
+
 import static com.edev.emall.utils.ValidUtils.isNull;
 
 public class RoleServiceImpl implements RoleService {
@@ -36,5 +39,10 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public Role load(Long roleId) {
         return dao.load(roleId, Role.class);
+    }
+
+    @Override
+    public Collection<Role> loadAll(List<Long> roleIds) {
+        return dao.loadForList(roleIds, Role.class);
     }
 }

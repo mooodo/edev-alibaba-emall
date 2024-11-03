@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -18,8 +18,8 @@ public class User extends Entity<Long> {
     private int credentialsExpired;
     private int disabled;
     private String userType;
-    private List<Authority> authorities = new ArrayList<>();
-    private List<Role> roles = new ArrayList<>();
+    private Collection<Authority> authorities = new ArrayList<>();
+    private Collection<Role> roles = new ArrayList<>();
 
     public Boolean getAccountExpired() {
         return accountExpired!=0;

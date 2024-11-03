@@ -2,7 +2,7 @@ package com.edev.emall.authority.web;
 
 import com.edev.emall.authority.entity.User;
 import com.edev.emall.authority.service.UserService;
-import com.edev.emall.security.utils.SecurityUtils;
+import com.edev.emall.security.utils.SecurityHelper;
 import com.edev.support.entity.ResultSet;
 import com.edev.support.query.QueryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +19,8 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private UserService service;
+    @Autowired
+    private SecurityHelper securityHelper;
     @Value("${security.passwordEncoder}")
     private String passwordEncoder;
     private void encodePassword(User user) {
@@ -31,7 +33,7 @@ public class UserController {
         return service.register(user);
     }
     @PostMapping("modify")
-    @PreAuthorize("#user.username == authentication.principal")
+    @PreAuthorize("(#user.username == authentication.principal) or (hasAuthority('administrator'))")
     public void modify(@RequestBody User user) {
         encodePassword(user);
         service.modify(user);
@@ -48,14 +50,14 @@ public class UserController {
     }
     @GetMapping("showMe")
     public User showMe() {
-        String username = SecurityUtils.getMyName();
+        String username = securityHelper.getMyName();
         return service.loadByName(username);
     }
     @GetMapping("changePassword")
     public void changePassword(String oldPwd, String newPwd) {
         User me = showMe();
         if(me==null) throw new BadCredentialsException("No Authentication for the current user!");
-        if(!SecurityUtils.passwordIsMatch(oldPwd, me.getPassword()))
+        if(!securityHelper.passwordIsMatch(oldPwd, me.getPassword()))
             throw new BadCredentialsException("Wrong Password!");
         me.setPassword(newPwd);
         encodePassword(me);

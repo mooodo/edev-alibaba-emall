@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -13,6 +13,6 @@ public class Authority extends Entity<Long> {
     private Long id;
     private String name;
     private String description;
-    private List<User> users = new ArrayList<>();
-    private List<Role> roles = new ArrayList<>();
+    private Collection<User> users = new ArrayList<>();
+    private Collection<Role> roles = new ArrayList<>();
 }
